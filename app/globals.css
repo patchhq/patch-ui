@@ -134,6 +134,30 @@ footer a:hover {
   padding: 28px 0 0;
 }
 
+@media (max-width: 640px) {
+  .hero {
+    padding: 20px 20px 32px;
+  }
+
+  .hero .wrap {
+    padding: 0;
+  }
+
+  .hero-main {
+    padding: 64px 0 72px;
+  }
+
+  .hero-nav {
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .hero-note {
+    padding: 0 4px;
+    word-break: break-word;
+  }
+}
+
 .hero-nav {
   display: flex;
   justify-content: space-between;
@@ -304,21 +328,6 @@ footer a:hover {
 }
 
 @media (max-width: 640px) {
-  .hero {
-    margin: 16px;
-    border-radius: 10px;
-    padding: 20px 0 0;
-  }
-
-  .hero-main {
-    padding: 64px 0 72px;
-  }
-
-  .hero-note {
-    margin-left: 4px;
-    margin-right: 4px;
-  }
-
   .hunk-watermark {
     display: none;
   }
