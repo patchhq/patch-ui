@@ -57,12 +57,14 @@ export default function Home() {
         </div>
         <div className="hero-visual animate-rise-delay">
           <Image
-            src="/images/editor-fix.png"
+            src="/images/editor-fix.jpg"
             alt="Patch editor fix: createCharge gains a required currency parameter, typecheck passes at confidence 0.85"
-            width={1400}
-            height={900}
+            width={2048}
+            height={1280}
             priority
-            sizes="100vw"
+            quality={100}
+            unoptimized
+            sizes="(max-width: 1100px) 100vw, 1100px"
           />
         </div>
         <div className="hunk-watermark">@@ -12,3 +12,7 @@</div>
@@ -275,11 +277,13 @@ export default function Home() {
           <div className="product-shot-wrap">
             <Image
               className="product-shot"
-              src="/images/patch-init.png"
+              src="/images/patch-init.jpg"
               alt="Terminal running npx patch init: detects TypeScript, OpenAI and Stripe connectors, writes patch.config.json and GitHub Action"
-              width={1200}
-              height={900}
-              sizes="(max-width: 1060px) 100vw, 1060px"
+              width={2048}
+              height={1280}
+              quality={100}
+              unoptimized
+              sizes="(max-width: 1100px) 100vw, 1100px"
             />
           </div>
 
@@ -362,11 +366,13 @@ export default function Home() {
             <div className="product-shot-wrap" style={{ marginBottom: 0 }}>
               <Image
                 className="product-shot"
-                src="/images/confidence-gate.png"
+                src="/images/confidence-gate.jpg"
                 alt="Confidence gate: same scan opens a pull request at 0.85 or an issue at 0.55 depending on confidence_threshold 0.7"
-                width={1400}
-                height={900}
-                sizes="(max-width: 1060px) 100vw, 1060px"
+                width={2048}
+                height={1280}
+                quality={100}
+                unoptimized
+                sizes="(max-width: 1100px) 100vw, 1100px"
               />
             </div>
           </div>
