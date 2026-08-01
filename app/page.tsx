@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { HeroTitle } from "./components/hero-title";
 
 const NPM_CLI = "https://www.npmjs.com/package/@patch-dev/cli";
@@ -33,10 +34,36 @@ export default function Home() {
               <span className="bar">$</span>
               npx patch init
             </a>
-            <a className="hero-ghost" href={GITHUB} target="_blank" rel="noopener noreferrer">
+            <a
+              className="hero-ghost"
+              href={GITHUB}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               View on GitHub →
             </a>
+            <a className="hero-ghost" href="#demo">
+              Watch demo →
+            </a>
           </div>
+          <p className="hero-note animate-rise-delay">
+            Package is{" "}
+            <a href={NPM_CLI} target="_blank" rel="noopener noreferrer">
+              <code>@patch-dev/cli</code>
+            </a>
+            . If <code>npx patch</code> hits the unrelated npm package, use{" "}
+            <code>npx -y --package=@patch-dev/cli patch init</code>.
+          </p>
+        </div>
+        <div className="hero-visual animate-rise-delay">
+          <Image
+            src="/images/editor-fix.png"
+            alt="Patch editor fix: createCharge gains a required currency parameter, typecheck passes at confidence 0.85"
+            width={1400}
+            height={900}
+            priority
+            sizes="100vw"
+          />
         </div>
         <div className="hunk-watermark">@@ -12,3 +12,7 @@</div>
       </header>
@@ -245,6 +272,17 @@ export default function Home() {
             scheduled scans open PRs.
           </p>
 
+          <div className="product-shot-wrap">
+            <Image
+              className="product-shot"
+              src="/images/patch-init.png"
+              alt="Terminal running npx patch init: detects TypeScript, OpenAI and Stripe connectors, writes patch.config.json and GitHub Action"
+              width={1200}
+              height={900}
+              sizes="(max-width: 1060px) 100vw, 1060px"
+            />
+          </div>
+
           <pre className="code-block">
             <span className="comment">
               # In your TS/JS repo
@@ -320,46 +358,16 @@ export default function Home() {
           </div>
 
           <div className="comp-block">
-            <p className="comp-label">what a fix looks like</p>
-            <div className="example-grid">
-              <div className="diff-card">
-                <div className="diff-head">
-                  <span className="src">openai-node · CHANGELOG.md</span>
-                  <span className="src">v5.2.0</span>
-                </div>
-                <div className="diff-body">
-                  <div className="diff-line ctx">
-                    {"  const res = await openai.chat.completions.create({"}
-                  </div>
-                  <div className="diff-line rm">{"-   messages,"}</div>
-                  <div className="diff-line add">{"+   input: messages,"}</div>
-                  <div className="diff-line ctx">{"    model,"}</div>
-                  <div className="diff-line ctx">{"  });"}</div>
-                </div>
-              </div>
-
-              <article className="pr-card">
-                <p className="pr-title">
-                  Patch: <code>chat.completions.create</code> →{" "}
-                  <code>responses.create</code>
-                </p>
-                <div className="pr-meta">
-                  <div className="conf high" style={{ minWidth: 0 }}>
-                    <span className="dot" />
-                    <span className="label">High confidence</span>
-                  </div>
-                  <span className="pill">3 call sites</span>
-                </div>
-                <p className="pr-rationale">
-                  openai-node v5.2.0 renamed this method and swapped the
-                  messages param for input. Same shape, new name — updated all
-                  three call sites and the type-check passes clean.
-                </p>
-                <p className="pr-foot">
-                  Opened by Patch · source: npm CHANGELOG · review before
-                  merging
-                </p>
-              </article>
+            <p className="comp-label">confidence gate</p>
+            <div className="product-shot-wrap" style={{ marginBottom: 0 }}>
+              <Image
+                className="product-shot"
+                src="/images/confidence-gate.png"
+                alt="Confidence gate: same scan opens a pull request at 0.85 or an issue at 0.55 depending on confidence_threshold 0.7"
+                width={1400}
+                height={900}
+                sizes="(max-width: 1060px) 100vw, 1060px"
+              />
             </div>
           </div>
         </div>

@@ -177,8 +177,14 @@ footer a:hover {
 }
 
 .hero-main {
-  padding: 96px 0 120px;
+  padding: 96px 0 56px;
   text-align: center;
+}
+
+@media (max-width: 640px) {
+  .hero-main {
+    padding: 64px 0 36px;
+  }
 }
 
 .hero-eyebrow {
@@ -739,6 +745,31 @@ section.doc:nth-of-type(even) .split-card {
   overflow: hidden;
   border-radius: 10px;
   background: var(--ink);
+}
+
+.hero-visual {
+  width: 100%;
+  line-height: 0;
+  margin-top: 8px;
+}
+
+.hero-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.product-shot {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: var(--ink);
+}
+
+.product-shot-wrap {
+  margin: 0 0 32px;
 }
 
 .demo-video {
